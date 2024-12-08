@@ -1,2 +1,6 @@
+@use 'sass:math';
+
 $columns: 12;
 $base-column-width: math.div(100%, 12);
+
+$button-radius: 35px;

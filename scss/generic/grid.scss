@@ -1,3 +1,4 @@
+
 *[class^="col-"] {
     width: 100%;
 }
@@ -7,10 +8,10 @@
     margin: 0 auto;
 }
 
-@include tablet {
+@include mobile {
     .row {
         display: flex;
-        gap: 0.5em;
+        //gap: 0.5em;
     }
     
     @for $i from 1 through $columns {

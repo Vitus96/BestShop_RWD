@@ -2,13 +2,68 @@
 @import "settings/colors";
 @import "settings/fonts";
 @import "settings/icons";
-@import "settings/media";
+@import "settings/mixins";
 
 @import "generic/buttons";
 @import "generic/global";
 @import "generic/grid";
 @import "generic/reset";
 
-@import "elements/footer";
+@import "elements/base";
 @import "elements/header";
-@import "elements/main";
+@import "elements/intro";
+@import "elements/footer";
+
+
+//Fonts:
+/*
+$font-raleway: "Raleway", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+*/
+
+//Colors:
+/*
+$color-primary: #08A6E4;
+$color-primary-shadow: rgba(7, 172, 230, .16);
+$color-redish: #FB3B64;
+$color-green: #55DFB4;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey: #A5A5A5;
+$color-light-grey: #F7F7F7;
+*/
+
+//Mixins:
+/* 
+@mixin notebook {
+    @media (max-width: 1352px) {
+        @content
+    }
+}
+*/
+
+
+/*
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1352px;
+    margin: 0 auto;
+
+    @include notebook {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+
+//Header: 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+*/
