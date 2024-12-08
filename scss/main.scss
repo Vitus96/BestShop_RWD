@@ -1,28 +1,23 @@
+/*
 @import "settings/all";
 @import "settings/colors";
 @import "settings/fonts";
 @import "settings/icons";
 @import "settings/mixins";
 
-@import "generic/buttons";
-@import "generic/global";
-@import "generic/grid";
 @import "generic/reset";
+@import "generic/grid";
+@import "generic/global";
+@import "generic/buttons";
 
 @import "elements/base";
 @import "elements/header";
 @import "elements/intro";
 @import "elements/footer";
-
-
-//Fonts:
-/*
-$font-raleway: "Raleway", sans-serif;
-$font-open-sans: "Open Sans", sans-serif;
 */
 
 //Colors:
-/*
+
 $color-primary: #08A6E4;
 $color-primary-shadow: rgba(7, 172, 230, .16);
 $color-redish: #FB3B64;
@@ -31,7 +26,15 @@ $color-black: #000000;
 $color-white: #ffffff;
 $color-grey: #A5A5A5;
 $color-light-grey: #F7F7F7;
-*/
+
+
+//Fonts:
+
+$font-raleway: "Raleway", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+
+
+
 
 //Mixins:
 /* 
@@ -43,6 +46,7 @@ $color-light-grey: #F7F7F7;
 */
 
 
+//General:
 /*
 * {
     padding: 0;
@@ -67,3 +71,116 @@ $color-light-grey: #F7F7F7;
     justify-content: space-between;
 }
 */
+
+
+//GENERAL: 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1352px;
+    margin: 0 auto;
+
+    @media (min-width: 84.5em) {
+        //1352px
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+//HEADER - Navigation:
+.header_container {
+    height: 4.4em; //70px
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%; //přidáno
+
+    @media (min-width: 30em) {
+        flex-direction: row;
+    }
+
+    .logo {
+        font-family: $font-raleway;
+        font-size: 2em;
+        font-weight: 300;
+        color: $color-primary;
+    }
+
+    .nav {
+        ol {
+            list-style: none;
+            text-align: center;
+
+            li {
+                font-family: $font-open-sans;
+                display: inline-block;
+                padding: 27px 10px 27px 0px;
+                text-transform: uppercase;
+                color: $color-grey;
+                font-weight: bold;
+
+                @media (min-width: 30em) {
+                    
+                }
+
+            }
+        }
+    }
+    
+}
+
+
+//MAIN - Opening section:
+.opening__content {
+    text-align: center;
+
+    h1 {
+        display: block;
+        padding: 1em;
+        font-family: $font-raleway;
+        font-weight: normal;
+        font-size: 2.2em;
+    }
+
+    p {
+        display: block;
+        padding: 0.5em;
+        font-family: $font-open-sans;
+        font-size: 1em; 
+        margin-bottom: 3em;
+    }
+
+    a {
+        padding: 1.4em 5.8em;
+        background-color: $color-primary;
+        border-radius: 2.5em;
+        font-family: $font-open-sans;
+        font-weight: bold;
+        font-size: 1em;
+        color: $color-white;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+
+        @media (min-width: 220px){
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+}
+
+

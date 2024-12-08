@@ -1,6 +1,8 @@
 @use 'sass:math';
 
+$global-max-width: 60em; //podívat se na VERTI
 $columns: 12;
 $base-column-width: math.div(100%, 12);
+
 
 $button-radius: 35px;

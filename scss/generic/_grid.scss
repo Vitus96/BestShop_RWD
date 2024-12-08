@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-@include mobile {
+@include notebook {
     .row {
         display: flex;
         //gap: 0.5em;
