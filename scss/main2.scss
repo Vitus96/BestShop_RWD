@@ -1,0 +1,230 @@
+@use "sass:math";
+
+
+
+//@import "settings/all";
+//@import "settings/colors";
+//@import "settings/fonts";
+//@import "settings/icons";
+//@import "settings/mixins";
+
+@import "generic/reset";
+//@import "generic/grid";
+//@import "generic/global";
+//@import "generic/buttons";
+
+//@import "elements/base";
+//@import "elements/header";
+//@import "elements/intro";
+//@import "elements/footer";
+
+
+
+//Colors: 
+$color-blue-1: #08A6E4;
+$color-blue-2: #07ACE6;
+$color-blue-3: #07ACE629;
+$color-green-1: #55DFB4;
+$color-red-1: #FB3B64;
+$color-red-2: #EB476E;
+$color-red-3: #FF091129;
+$color-red-4: #F9043629;
+$color-black-1: #000000;
+$color-black-2: #13253B;
+$color-grey-1: #707070;
+$color-grey-2: #95989A;
+$color-grey-3: #A5A5A5;
+$color-grey-4: #00000029;
+$color-grey-5: #E8E9ED;
+$color-white-1: #FFFFFF;
+$color-white-2: #F7F7F7;
+
+//Fonts: 
+$font-raleway: "Raleway", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+
+//WIDTH:
+$width-tablet: 43.75em; //700px
+$width-desktop: 64em; //1024px
+
+//Generals: 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1352px;
+    //min-width: 375px; //nebo 23.4em
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 84.5em) {
+        //1352px
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+//GRID: 
+*[class^="col-"] {
+    //min-height: 3em;
+    //background-color: violet;
+    width: 100%;
+}
+
+$columns: 12;
+$base-column-width: math.div(100%, 12);
+
+.container {
+    max-width: 1352px;
+    //min-width: 375px; //nebo 23.4em
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 84.5em) {
+        //1352px
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 23.43em) {
+    //375px
+
+    .row {
+        display: flex;
+        //gap: 0.5em;
+    }
+
+    @for $i from 1 through $columns {
+        .col-#{$i} {
+            width: $base-column-width * $i;
+        }
+    }
+}
+
+//------------------------HEADER:----------------------
+//HEADER - Navigation: 
+.navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.4em; //70px
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+
+    .logo {
+        font-family: $font-open-sans;
+        font-size: 32px;
+        color: $color-blue-1;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    @media (min-width: 37.5em) {
+
+        //600px 
+        .navigation {
+            //justify-content: space-between;
+        }
+
+        .nav-container {
+            display: flex;
+
+
+            ul {
+
+                li {
+                    margin: 14px 0 14px 25px;
+                    text-decoration: none;
+
+                    a {
+                        text-decoration: none;
+                        font-family: $font-open-sans;
+                        color: $color-black-1;
+                        font-size: 11px;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+}
+
+
+//HEADER - Container:
+.header-container {
+
+    .header-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6.25em; //100px;
+
+        h1 {
+            text-align: center;
+            font-family: $font-raleway;
+            font-size: 35px;
+            font-weight: 500;
+        }
+
+        p {
+            text-align: center;
+            font-family: $font-open-sans;
+            font-weight: 500;
+        }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            margin-top: 1.75em; //28px
+            margin-bottom: 1em;
+            padding: 1.4em 5.75em; //22px 92px
+            background-color: $color-blue-1;
+            border-radius: 2.5em; //40px
+            font-family: $font-open-sans;
+            font-weight: bold;
+            color: white;
+
+            @media (min-width: $width-tablet) { //700px
+                padding: 1.4em 9.8em;
+            }
+        }
+
+    }
+
+}
+
+//HEADER - Image: 
+.header-image {
+    background-image: url(../images/Background@2x.png);
+    width: 100vw;
+    height: 25vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media (min-width: $width-tablet) { //700px
+        height: 40vh;
+    }
+
+    @media (min-width: $width-desktop) { //1024px
+        height: 50vh;
+    }
+
+}
+
+//--------------------MAIN------------------------
