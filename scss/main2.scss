@@ -163,11 +163,11 @@ $base-column-width: math.div(100%, 12);
 
 }
 
+//--------------------MAIN------------------------
+//MAIN - Section 1:
+.section-1-container {
 
-//HEADER - Container:
-.header-container {
-
-    .header-title {
+    .section-1-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -208,8 +208,8 @@ $base-column-width: math.div(100%, 12);
 
 }
 
-//HEADER - Image: 
-.header-image {
+//MAIN - Section 1 - Image: 
+.section-1-image {
     background-image: url(../images/Background@2x.png);
     width: 100vw;
     height: 25vh;
@@ -227,4 +227,9 @@ $base-column-width: math.div(100%, 12);
 
 }
 
-//--------------------MAIN------------------------
+//MAIN - Section 2: 
+.section-2-statistik-title p {
+    text-align: center;
+    font-family: $font-raleway;
+    font-size: 1.875em; //30px
+}

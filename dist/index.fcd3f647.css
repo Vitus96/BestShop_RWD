@@ -309,7 +309,7 @@ a {
   }
 }
 
-.header-container .header-title {
+.section-1-container .section-1-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -317,20 +317,20 @@ a {
   display: flex;
 }
 
-.header-container .header-title h1 {
+.section-1-container .section-1-title h1 {
   text-align: center;
   font-family: Raleway, sans-serif;
   font-size: 35px;
   font-weight: 500;
 }
 
-.header-container .header-title p {
+.section-1-container .section-1-title p {
   text-align: center;
   font-family: Open Sans, sans-serif;
   font-weight: 500;
 }
 
-.header-container .header-title a {
+.section-1-container .section-1-title a {
   text-align: center;
   color: #fff;
   background-color: #08a6e4;
@@ -344,12 +344,12 @@ a {
 }
 
 @media (width >= 43.75em) {
-  .header-container .header-title a {
+  .section-1-container .section-1-title a {
     padding: 1.4em 9.8em;
   }
 }
 
-.header-image {
+.section-1-image {
   background-image: url("Background@2x.f5f10dcd.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -359,14 +359,20 @@ a {
 }
 
 @media (width >= 43.75em) {
-  .header-image {
+  .section-1-image {
     height: 40vh;
   }
 }
 
 @media (width >= 64em) {
-  .header-image {
+  .section-1-image {
     height: 50vh;
   }
+}
+
+.section-2-statistik-title p {
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 1.875em;
 }
 /*# sourceMappingURL=index.fcd3f647.css.map */
