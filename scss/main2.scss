@@ -46,6 +46,10 @@ $font-open-sans: "Open Sans", sans-serif;
 //WIDTH:
 $width-tablet: 43.75em; //700px
 $width-desktop: 64em; //1024px
+$width-desktop-2: 111.25em; //1780px
+
+$max-icon: 3;
+
 
 //Generals: 
 * {
@@ -172,7 +176,7 @@ $base-column-width: math.div(100%, 12);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 6.25em; //100px;
+        margin-top: 6.25em; // 100px;
 
         h1 {
             text-align: center;
@@ -190,16 +194,16 @@ $base-column-width: math.div(100%, 12);
         a {
             text-align: center;
             text-decoration: none;
-            margin-top: 1.75em; //28px
+            margin-top: 1.75em; // 28px
             margin-bottom: 1em;
-            padding: 1.4em 5.75em; //22px 92px
+            padding: 1.4em 5.75em; // 22px 92px
             background-color: $color-blue-1;
-            border-radius: 2.5em; //40px
+            border-radius: 2.5em; // 0px
             font-family: $font-open-sans;
             font-weight: bold;
             color: white;
 
-            @media (min-width: $width-tablet) { //700px
+            @media (min-width: $width-tablet) { // 700px
                 padding: 1.4em 9.8em;
             }
         }
@@ -217,19 +221,75 @@ $base-column-width: math.div(100%, 12);
     background-size: cover;
     background-position: center;
 
-    @media (min-width: $width-tablet) { //700px
+    @media (min-width: $width-tablet) { // 700px
         height: 40vh;
     }
 
-    @media (min-width: $width-desktop) { //1024px
+    @media (min-width: $width-desktop) { // 1024px
         height: 50vh;
+    }
+
+    @media (min-width: $width-desktop-2) { // 1780px
+        height: 60vh;
     }
 
 }
 
 //MAIN - Section 2: 
-.section-2-statistik-title p {
+.section-2-statistik-title h2 {
     text-align: center;
     font-family: $font-raleway;
     font-size: 1.875em; //30px
+    font-weight: 500;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-2-statistik-icons {
+    //max-width: 800px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3em 0;
+
+    @media (min-width: $width-tablet) { // 700 px
+        flex-direction: row;
+        max-width: 40.625em; // 650px;
+    }
+}
+
+@for $i from 1 through $max-icon {
+    .icon-#{$i} {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+
+        }
+
+        span {
+            font-family: $font-raleway;
+            font-size: 1.25em; // 20px
+            font-weight: 900;
+            margin: 1em 0;
+            flex-grow: 1;
+        }
+
+        p {
+            font-family: $font-raleway;
+            font-size: 1.0625em; // 17px
+            color: $color-grey-3;
+            margin-bottom: 2em; 
+            
+        }
+    }
 }
