@@ -45,11 +45,12 @@ $font-open-sans: "Open Sans", sans-serif;
 
 //WIDTH:
 $width-tablet: 43.75em; // 700px
-$width-tablet-2:34.375em; // 550px
+$width-tablet-2: 34.375em; // 550px
 $width-desktop: 64em; // 1024px
 $width-desktop-2: 111.25em; // 1780px
 
 $max-icon: 3;
+$max-img: 3;
 
 
 //Generals: 
@@ -93,7 +94,8 @@ $base-column-width: math.div(100%, 12);
     width: 100%;
     margin: 0 auto;
 
-    @media (min-width: 84.5em) { // 1352px
+    @media (min-width: 84.5em) {
+        // 1352px
         //1352px
         width: 100%;
         padding: 0 15px;
@@ -114,6 +116,8 @@ $base-column-width: math.div(100%, 12);
         }
     }
 }
+
+
 
 //------------------------HEADER:----------------------
 //HEADER - Navigation: 
@@ -171,6 +175,7 @@ $base-column-width: math.div(100%, 12);
     }
 
 }
+
 
 //--------------------MAIN------------------------
 //MAIN - Section 1:
@@ -248,6 +253,7 @@ $base-column-width: math.div(100%, 12);
 
 }
 
+
 //MAIN - Section 2: 
 .section-2-statistik-title h2 {
     text-align: center;
@@ -271,7 +277,8 @@ $base-column-width: math.div(100%, 12);
     align-items: center;
     margin: 3em 0;
 
-    @media (min-width: $width-tablet-2) { // 550 px
+    @media (min-width: $width-tablet-2) {
+        // 550 px
         flex-direction: row;
         max-width: 40.625em; // 650px;
     }
@@ -292,6 +299,7 @@ $base-column-width: math.div(100%, 12);
 
     @content;
 }
+
 //End of MIXIN -----------------------------------
 
 @for $i from 1 through $max-icon {
@@ -312,37 +320,139 @@ $base-column-width: math.div(100%, 12);
         }
 
         .icon-1-frame::after {
-            @include iconFrame(7px, -15px, $color-red-1);
+            @include iconFrame(0.4375em, -0.9375em, $color-red-1); // 7px -15px
         }
 
         .icon-2-frame::after {
-            @include iconFrame(7px, -15px, $color-blue-1);
+            @include iconFrame(0.4375em, -0.9375em, $color-blue-1); // 7px -15px
         }
 
         .icon-3-frame::after {
-            @include iconFrame(7px, -15px, $color-green-1);
+            @include iconFrame(0.4375em, -0.9375em, $color-green-1); // 7px -15px
+        }
+
+        img {
+            position: relative;
+            z-index: 1;
+        }
+
+        span {
+            font-family: $font-raleway;
+            font-size: 1.25em; // 20px
+            font-weight: 900;
+            margin: 1em 0; // 16px
+            flex-grow: 1;
+            letter-spacing: 0.375em; // 6px
+        }
+
+        p {
+            font-family: $font-raleway;
+            font-size: 1.0625em; // 17px
+            color: $color-grey-3;
+            margin-bottom: 2em;
         }
 
     }
 
-    img {
-        position: relative;
-        z-index: 1;
-    }
+}
 
-    span {
-        font-family: $font-raleway;
-        font-size: 1.25em; // 20px
-        font-weight: 900;
-        margin: 1em 0;
-        flex-grow: 1;
-        letter-spacing: 6px;
-    }
 
-    p {
-        font-family: $font-raleway;
-        font-size: 1.0625em; // 17px
-        color: $color-grey-3;
-        margin-bottom: 2em;
+//MAIN - Section 3:
+
+.section-3-benefits-bg {
+    background-color: $color-white-2;
+}
+
+.container-3 {
+    max-width: 70.25em; // 1124px
+    width: 100%;
+}
+
+
+/*
+@mixin backgroundImage($top-img, $left-img, $color-img) { //POKUS o nastavení pozadí obrázků
+    content: "";
+    display: block;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: $top-img;
+    left: $left-img;
+    border: none;
+    border-radius: 50%;
+    background-color: $color-img;
+    transform: rotate(45deg);
+
+    @content;
+}*/
+
+@for $e from 1 through $max-img {
+    .section-3-bebefits-#{$e}-row {
+        background-color: $color-white-1;
+        border-radius: 0.3125em; // 5px
+        border: 0.0625em solid #E8E9ED; // 1px
+        padding: 1.375em; // 22px
+        margin: 2.5625em 1.875em; // 41px 30px
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $width-desktop) {
+            flex-direction: row;
+           
+            .section-3-bebefits-1-row { //POKUS o přehození textu a obrázku na druhou stranu !!!
+                flex-direction: row-reverse;
+            }
+        }
+        
+        @for $a from 1 through $max-img {
+            .section-3-bebefits-#{$a}-row-text {
+                h2 {
+                    font-family: $font-raleway;
+                    font-size: 1.875em; // 30px
+                    font-weight: 500;
+                    margin: 1em 0;
+                }
+
+                p {
+                    font-family: $font-open-sans;
+                    font-size: 0.875em; // 14px
+
+                }
+            }
+        }
+
+        @for $b from 1 through $max-img {
+            .section-3-bebefits-#{$b}-row-image {
+                max-width: 170px;
+                width: 100%;
+                position: relative;
+
+                @media (min-width: 500px) {
+                    max-width: 220px;
+                }
+
+                @media (min-width: 600px) {
+                    max-width: 270px;
+                }
+
+                @media (min-width: 700px) {
+                    max-width: 350px;
+                }
+
+                img {
+                    width: 100%;
+                    z-index: 1;
+                }
+            }
+            /*
+            .section-3-bebefits-1-row {
+                @include backgroundImage(10px, 10px, $color-red-1);
+
+            }*/
+        }
+
     }
 }
