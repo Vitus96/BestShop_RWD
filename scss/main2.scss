@@ -44,9 +44,10 @@ $font-raleway: "Raleway", sans-serif;
 $font-open-sans: "Open Sans", sans-serif;
 
 //WIDTH:
-$width-tablet: 43.75em; //700px
-$width-desktop: 64em; //1024px
-$width-desktop-2: 111.25em; //1780px
+$width-tablet: 43.75em; // 700px
+$width-tablet-2:34.375em; // 550px
+$width-desktop: 64em; // 1024px
+$width-desktop-2: 111.25em; // 1780px
 
 $max-icon: 3;
 
@@ -92,7 +93,7 @@ $base-column-width: math.div(100%, 12);
     width: 100%;
     margin: 0 auto;
 
-    @media (min-width: 84.5em) {
+    @media (min-width: 84.5em) { // 1352px
         //1352px
         width: 100%;
         padding: 0 15px;
@@ -128,6 +129,10 @@ $base-column-width: math.div(100%, 12);
         font-family: $font-open-sans;
         font-size: 32px;
         color: $color-blue-1;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .nav {
@@ -203,7 +208,12 @@ $base-column-width: math.div(100%, 12);
             font-weight: bold;
             color: white;
 
-            @media (min-width: $width-tablet) { // 700px
+            &:hover {
+                cursor: pointer;
+            }
+
+            @media (min-width: $width-tablet) {
+                // 700px
                 padding: 1.4em 9.8em;
             }
         }
@@ -221,15 +231,18 @@ $base-column-width: math.div(100%, 12);
     background-size: cover;
     background-position: center;
 
-    @media (min-width: $width-tablet) { // 700px
+    @media (min-width: $width-tablet) {
+        // 700px
         height: 40vh;
     }
 
-    @media (min-width: $width-desktop) { // 1024px
+    @media (min-width: $width-desktop) {
+        // 1024px
         height: 50vh;
     }
 
-    @media (min-width: $width-desktop-2) { // 1780px
+    @media (min-width: $width-desktop-2) {
+        // 1780px
         height: 60vh;
     }
 
@@ -258,11 +271,28 @@ $base-column-width: math.div(100%, 12);
     align-items: center;
     margin: 3em 0;
 
-    @media (min-width: $width-tablet) { // 700 px
+    @media (min-width: $width-tablet-2) { // 550 px
         flex-direction: row;
         max-width: 40.625em; // 650px;
     }
 }
+
+
+//MIXIN for background icons:
+@mixin iconFrame ($top, $left, $color) {
+    content: "";
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    top: $top;
+    left: $left;
+    border: none;
+    border-radius: 50%;
+    background-color: $color;
+
+    @content;
+}
+//End of MIXIN -----------------------------------
 
 @for $i from 1 through $max-icon {
     .icon-#{$i} {
@@ -272,24 +302,47 @@ $base-column-width: math.div(100%, 12);
         align-items: center;
         text-align: center;
 
-        img {
-
+        .icon-frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            position: relative;
         }
 
-        span {
-            font-family: $font-raleway;
-            font-size: 1.25em; // 20px
-            font-weight: 900;
-            margin: 1em 0;
-            flex-grow: 1;
+        .icon-1-frame::after {
+            @include iconFrame(7px, -15px, $color-red-1);
         }
 
-        p {
-            font-family: $font-raleway;
-            font-size: 1.0625em; // 17px
-            color: $color-grey-3;
-            margin-bottom: 2em; 
-            
+        .icon-2-frame::after {
+            @include iconFrame(7px, -15px, $color-blue-1);
         }
+
+        .icon-3-frame::after {
+            @include iconFrame(7px, -15px, $color-green-1);
+        }
+
+    }
+
+    img {
+        position: relative;
+        z-index: 1;
+    }
+
+    span {
+        font-family: $font-raleway;
+        font-size: 1.25em; // 20px
+        font-weight: 900;
+        margin: 1em 0;
+        flex-grow: 1;
+        letter-spacing: 6px;
+    }
+
+    p {
+        font-family: $font-raleway;
+        font-size: 1.0625em; // 17px
+        color: $color-grey-3;
+        margin-bottom: 2em;
     }
 }
