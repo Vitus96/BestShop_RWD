@@ -508,3 +508,29 @@ $base-column-width: math.div(100%, 12);
         
     }
 }
+
+
+//MAIN - Section 4: 
+.container-4 {
+    max-width: 79.125em; // 1266px
+    width: 100%;
+}
+
+.section-4-title h2 {
+    text-align: center;
+    font-family: $font-raleway;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 1.5em 0 0.5em 0;
+}
+
+
+@mixin boxes() {
+    
+}
+
+@for $i from 1 through 3 {
+    section-4-box-#{$i} {
+        
+    }
+}

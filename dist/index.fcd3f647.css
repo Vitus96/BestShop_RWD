@@ -727,4 +727,17 @@ a {
   z-index: 1;
   width: 100%;
 }
+
+.container-4 {
+  width: 100%;
+  max-width: 79.125em;
+}
+
+.section-4-title h2 {
+  text-align: center;
+  margin: 1.5em 0 .5em;
+  font-family: Raleway, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+}
 /*# sourceMappingURL=index.fcd3f647.css.map */
