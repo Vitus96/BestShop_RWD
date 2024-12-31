@@ -184,3 +184,151 @@ a {
 }
 
 
+
+
+
+
+
+
+/*
+@mixin backgroundImage($top-img, $left-img, $color-img) { //POKUS o nastavení pozadí obrázků
+    content: "";
+    display: block;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: $top-img;
+    left: $left-img;
+    border: none;
+    border-radius: 50%;
+    background-color: $color-img;
+    transform: rotate(45deg);
+
+    @content;
+}*/
+
+/*
+@for $e from 1 through $max-text {
+    .section-3-bebefits-#{$e}-row {
+        background-color: $color-white-1;
+        border-radius: 0.3125em; // 5px
+        border: 0.0625em solid #E8E9ED; // 1px
+        padding: 1.375em; // 22px
+        margin: 2.5625em 1.875em; // 41px 30px
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: $width-desktop) {
+            flex-direction: row;
+
+            .section-3-bebefits-1-row {
+                //POKUS o přehození textu a obrázku na druhou stranu !!!
+                flex-direction: row-reverse;
+            }
+        }
+
+        @for $a from 1 through $max-text {
+            .section-3-bebefits-#{$a}-row-text {
+                h2 {
+                    font-family: $font-raleway;
+                    font-size: 1.875em; // 30px
+                    font-weight: 500;
+                    margin: 1em 0;
+                }
+
+                p {
+                    font-family: $font-open-sans;
+                    font-size: 0.875em; // 14px
+
+                }
+            }
+        }
+
+        @for $b from 1 through $max-img {
+            .section-3-bebefits-#{$b}-row-image {
+                max-width: 170px;
+                width: 100%;
+                position: relative;
+
+                @media (min-width: 500px) {
+                    max-width: 220px;
+                }
+
+                @media (min-width: 600px) {
+                    max-width: 270px;
+                }
+
+                @media (min-width: 700px) {
+                    max-width: 350px;
+                }
+
+                img {
+                    width: 100%;
+                    z-index: 1;
+                }
+            }
+
+            
+            .section-3-bebefits-3-row-image {
+                max-width: 70.25em; // 1124px
+                width: 100%;
+                background-color: $color-green-1;
+            }
+            
+        }
+    }
+
+*/
+
+
+
+
+
+/*
+    .section-3-bebefits-3-row-image {
+        max-width: 375px;
+        width: 100%;
+        position: relative;
+
+        background-color: $color-white-1;
+        border-radius: 0.3125em; // 5px
+        border: 0.0625em solid #E8E9ED; // 1px
+        padding: 1.375em; // 22px
+        margin: 2.5625em 1.875em; // 41px 30px
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 170px;
+            width: 100%;
+            position: relative;
+
+            @media (min-width: 500px) {
+                max-width: 220px;
+            }
+
+            @media (min-width: 600px) {
+                max-width: 270px;
+            }
+
+            @media (min-width: 700px) {
+                max-width: 350px;
+            }
+
+            img {
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    }
+*/
+
+/*}*/
+
+
