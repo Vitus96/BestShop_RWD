@@ -231,7 +231,6 @@ $base-column-width: math.div(100%, 12);
 //MAIN - Section 1 - Image: 
 .section-1-image {
     background-image: url(../images/Background@2x.png);
-    width: 100vw;
     height: 25vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -368,8 +367,14 @@ $base-column-width: math.div(100%, 12);
 .container-3 {
     max-width: 70.25em; // 1124px
     width: 100%;
+    padding-top:2em;
+    padding-bottom: 2em;
 }
 
+.container-3 .row {
+    margin: 4em 2em 4em 2em; // Mezery mezi řádky/ROW !!!
+    
+}
 /*
 .section-3-row {
     display: flex;
@@ -386,24 +391,36 @@ $base-column-width: math.div(100%, 12);
 .section-3-bebefits-1-row,
 .section-3-bebefits-2-row,
 .section-3-bebefits-3-row {
-    background-color: $color-white-1;
+    /*background-color: $color-white-1;
     border-radius: 0.3125em; // 5px
     border: 0.0625em solid #E8E9ED; // 1px
-    padding: 1.375em; // 22px
-    margin: 2.5625em 1.875em; // 41px 30px
+    padding: 1.375em; // 22px*/
+    //margin: 2.5625em 1.875em; // 41px 30px
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
 
     @media (min-width: $width-desktop) {
         flex-direction: row;
+        gap: 2em; // Mezery mezi textem a obrázkem !!!
     }
 }
 
 .section-3-bebefits-3-row {
     padding: 0;
+}
+
+.section-3-bebefits-1-row,
+.section-3-bebefits-2-row,
+.section-3-bebefits-3-row-text,
+.section-3-bebefits-3-row-image {
+    background-color: $color-white-1;
+    border-radius: 0.3125em; // 5px
+    border: 0.0625em solid #E8E9ED; // 1px
+    padding: 1.375em; // 22px
+    
 }
 
 /*
@@ -481,8 +498,14 @@ $base-column-width: math.div(100%, 12);
         max-width: 350px;
     }
 
+    &::after { //Pozadí obrázků !!!
+        display: block;
+        @include iconFrame(0.4375em, -0.9375em, $color-red-1); // 7px -15px
+    }
+
     img {
         width: 100%;
+        position: relative;
         z-index: 1;
     }
 }
