@@ -46,6 +46,9 @@ $font-open-sans: "Open Sans", sans-serif;
 //WIDTH:
 $width-tablet: 43.75em; // 700px
 $width-tablet-2: 34.375em; // 550px
+$width-tablet-3: 31.25em; // 500px
+$width-tablet-4: 37.5em,; // 600px
+$width-tablet-5: 43.75em; // 700px
 $width-desktop: 64em; // 1024px
 $width-desktop-2: 111.25em; // 1780px
 
@@ -375,32 +378,15 @@ $base-column-width: math.div(100%, 12);
     margin: 4em 2em 4em 2em; // Mezery mezi řádky/ROW !!!
     
 }
-/*
-.section-3-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    //width: 100%;
-/*
-    @media (min-width:375px) {
-        width: 100%;
-    }*/
-/*}*/
 
 .section-3-bebefits-1-row,
 .section-3-bebefits-2-row,
 .section-3-bebefits-3-row {
-    /*background-color: $color-white-1;
-    border-radius: 0.3125em; // 5px
-    border: 0.0625em solid #E8E9ED; // 1px
-    padding: 1.375em; // 22px*/
-    //margin: 2.5625em 1.875em; // 41px 30px
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    //align-items: center;
+    align-items: center;
+    //position: relative;
 
     @media (min-width: $width-desktop) {
         flex-direction: row;
@@ -422,29 +408,6 @@ $base-column-width: math.div(100%, 12);
     padding: 1.375em; // 22px
     
 }
-
-/*
-.section-3-bebefits-3-row {
-    margin: 2.5625em 1.875em 0 1.875em; // 41px 30px 0px 30px
-   
-
-    @media (min-width: $width-desktop) {
-        flex-direction: row;
-    }
-}*/
-
-/*
-.section-3-bebefits-3-row {
-    background-color: $color-white-1;
-    border-radius: 0.3125em; // 5px
-    border: 0.0625em solid #E8E9ED; // 1px
-    padding: 1.375em; // 22px
-    margin: 2.5625em 1.875em; // 41px 30px
-
-    display: flex;
-    flex-direction: column;
-}
-*/
 
 .section-3-bebefits-1-row-text,
 .section-3-bebefits-2-row-text,
@@ -472,19 +435,30 @@ $base-column-width: math.div(100%, 12);
     }
 }
 
-/*
-.section-3-bebefits-3-row-container {
-    background-color: $color-green-1;
-    border-radius: 0.3125em;
-    margin: 0 1.875em 0 1.875em; // 41px 30px 0px 30px
+//MIXIN for background images:
+@mixin imageFrame ($width-img, $height-img, $top, $left, $border-radius, $color, $rotate) {
+    content: "";
+    display: block;
+    position: absolute;
+    width: $width-img;
+    height: $height-img;
+    top: $top;
+    left: $left;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $color;
+    transform: rotate($rotate);
+
+    @content;
 }
-*/
+//End of MIXIN -----------------------------------
 
 .section-3-bebefits-1-row-image,
 .section-3-bebefits-2-row-image {
     max-width: 170px;
     width: 100%;
     position: relative;
+    padding-top: 2em;
 
     @media (min-width: 500px) {
         max-width: 220px;
@@ -498,15 +472,46 @@ $base-column-width: math.div(100%, 12);
         max-width: 350px;
     }
 
-    &::after { //Pozadí obrázků !!!
-        display: block;
-        @include iconFrame(0.4375em, -0.9375em, $color-red-1); // 7px -15px
-    }
-
     img {
         width: 100%;
         position: relative;
         z-index: 1;
+    }
+}
+
+.section-3-bebefits-1-row-image {
+    &::after {
+        @include imageFrame (90px, 90px, 15px, 88px, 20px, $color-red-1, 45deg);
+
+        @media (min-width: $width-tablet-3) { // 500px
+            @include imageFrame (110px, 110x, 15px, 110px, 20px, $color-red-1, 45deg);
+        }
+
+        @media (min-width: $width-tablet-4) {
+            @include imageFrame (130px, 130px, 15px, 130px, 20px, $color-red-1, 45deg);
+        }
+
+        @media (min-width: $width-tablet-5) {
+            @include imageFrame (130px, 130px, 15px, 200px, 20px, $color-red-1, 45deg);
+        }    
+    }
+}
+
+.section-3-bebefits-2-row-image {
+    &::after {
+        @include imageFrame (130px, 130px, 20px, 5px, 50%, $color-blue-1, 45deg);
+
+        @media (min-width: $width-tablet-3) { // 500px
+            @include imageFrame (150px, 150px, 20px, 20px, 50%, $color-blue-1, 45deg);
+        }
+
+        @media (min-width: $width-tablet-4) { // 600px
+            @include imageFrame (190px, 190px, 20px, 5px, 50%, $color-blue-1, 45deg);
+        }
+
+        @media (min-width: $width-tablet-5) { // 700px
+            @include imageFrame (250px, 250px, 20px, 0px, 50%, $color-blue-1, 45deg);
+        } 
     }
 }
 
@@ -532,7 +537,6 @@ $base-column-width: math.div(100%, 12);
     }
 }
 
-
 //MAIN - Section 4: 
 .container-4 {
     max-width: 79.125em; // 1266px
@@ -546,7 +550,6 @@ $base-column-width: math.div(100%, 12);
     font-weight: 500;
     margin: 1.5em 0 0.5em 0;
 }
-
 
 @mixin boxes() {
     
