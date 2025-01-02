@@ -47,7 +47,7 @@ $font-open-sans: "Open Sans", sans-serif;
 $width-tablet: 43.75em; // 700px
 $width-tablet-2: 34.375em; // 550px
 $width-tablet-3: 31.25em; // 500px
-$width-tablet-4: 37.5em,; // 600px
+$width-tablet-4: 37.5em, ; // 600px
 $width-tablet-5: 43.75em; // 700px
 $width-desktop: 64em; // 1024px
 $width-desktop-2: 111.25em; // 1780px
@@ -55,6 +55,7 @@ $width-desktop-2: 111.25em; // 1780px
 $max-icon: 3;
 $max-text: 3;
 $max-img: 3;
+$max-box: 3;
 
 
 //Generals: 
@@ -370,13 +371,13 @@ $base-column-width: math.div(100%, 12);
 .container-3 {
     max-width: 70.25em; // 1124px
     width: 100%;
-    padding-top:2em;
+    padding-top: 2em;
     padding-bottom: 2em;
 }
 
 .container-3 .row {
     margin: 4em 2em 4em 2em; // Mezery mezi řádky/ROW !!!
-    
+
 }
 
 .section-3-bebefits-1-row,
@@ -406,7 +407,7 @@ $base-column-width: math.div(100%, 12);
     border-radius: 0.3125em; // 5px
     border: 0.0625em solid #E8E9ED; // 1px
     padding: 1.375em; // 22px
-    
+
 }
 
 .section-3-bebefits-1-row-text,
@@ -429,7 +430,7 @@ $base-column-width: math.div(100%, 12);
     h2 {
         margin: 1.5em 1.5em 1em 0.7em;
     }
-    
+
     p {
         margin: 1.5em 1.5em 2em 1.6em;
     }
@@ -451,6 +452,7 @@ $base-column-width: math.div(100%, 12);
 
     @content;
 }
+
 //End of MIXIN -----------------------------------
 
 .section-3-bebefits-1-row-image,
@@ -483,7 +485,8 @@ $base-column-width: math.div(100%, 12);
     &::after {
         @include imageFrame (90px, 90px, 15px, 88px, 20px, $color-red-1, 45deg);
 
-        @media (min-width: $width-tablet-3) { // 500px
+        @media (min-width: $width-tablet-3) {
+            // 500px
             @include imageFrame (110px, 110x, 15px, 110px, 20px, $color-red-1, 45deg);
         }
 
@@ -493,7 +496,7 @@ $base-column-width: math.div(100%, 12);
 
         @media (min-width: $width-tablet-5) {
             @include imageFrame (130px, 130px, 15px, 200px, 20px, $color-red-1, 45deg);
-        }    
+        }
     }
 }
 
@@ -501,17 +504,20 @@ $base-column-width: math.div(100%, 12);
     &::after {
         @include imageFrame (130px, 130px, 20px, 5px, 50%, $color-blue-1, 45deg);
 
-        @media (min-width: $width-tablet-3) { // 500px
+        @media (min-width: $width-tablet-3) {
+            // 500px
             @include imageFrame (150px, 150px, 20px, 20px, 50%, $color-blue-1, 45deg);
         }
 
-        @media (min-width: $width-tablet-4) { // 600px
+        @media (min-width: $width-tablet-4) {
+            // 600px
             @include imageFrame (190px, 190px, 20px, 5px, 50%, $color-blue-1, 45deg);
         }
 
-        @media (min-width: $width-tablet-5) { // 700px
+        @media (min-width: $width-tablet-5) {
+            // 700px
             @include imageFrame (250px, 250px, 20px, 0px, 50%, $color-blue-1, 45deg);
-        } 
+        }
     }
 }
 
@@ -519,9 +525,10 @@ $base-column-width: math.div(100%, 12);
     //max-width: 170px;
     width: 100%;
     position: relative;
-    background-color:  $color-green-1;
+    background-color: $color-green-1;
     border-radius: 0.3125em; // 5px
     position: relative;
+
     /*
     @media (min-width:375px){
         margin: 2.5625em;
@@ -532,31 +539,85 @@ $base-column-width: math.div(100%, 12);
         //height: 23vh;
         z-index: 1;
         //padding-top: 5em;
-        
-        
+
+
     }
 }
 
-//MAIN - Section 4: 
+//MAIN - Section 4 (PRICING) -------------------
 .container-4 {
-    max-width: 79.125em; // 1266px
+    //max-width: 79.125em; // 1266px
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 .section-4-title h2 {
     text-align: center;
     font-family: $font-raleway;
-    font-size: 36px;
+    font-size: 2.25em; // 36 px
     font-weight: 500;
     margin: 1.5em 0 0.5em 0;
 }
 
-@mixin boxes() {
-    
+.section-4-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    @media (min-width: 900px) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
-@for $i from 1 through 3 {
-    section-4-box-#{$i} {
-        
+.section-4-box-1,
+.section-4-box-2,
+.section-4-box-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5em 1em 2.5em 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1.125em; // 18px;
+
+    .section-4-box-1-title,
+    .section-4-box-2-title,
+    .section-4-box-3-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-family: $font-raleway;
+            font-size: 20px;
+            font-weight: 700;
+            color: $color-black-2;
+
+        }
+
+        strong {
+            font-family: $font-open-sans;
+            font-size: 2.875em; // 46px
+            font-weight: 300;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            li {
+                list-style: none;
+            }
+        }
     }
 }

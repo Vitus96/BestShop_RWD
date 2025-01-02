@@ -863,15 +863,73 @@ a {
 }
 
 .container-4 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 79.125em;
+  display: flex;
 }
 
 .section-4-title h2 {
   text-align: center;
   margin: 1.5em 0 .5em;
   font-family: Raleway, sans-serif;
-  font-size: 36px;
+  font-size: 2.25em;
   font-weight: 500;
+}
+
+.section-4-boxes {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@media (width >= 900px) {
+  .section-4-boxes {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.section-4-box-1, .section-4-box-2, .section-4-box-3 {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 1.125em;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5em 1em;
+  display: flex;
+}
+
+.section-4-box-1 .section-4-box-1-title, .section-4-box-1 .section-4-box-2-title, .section-4-box-1 .section-4-box-3-title, .section-4-box-2 .section-4-box-1-title, .section-4-box-2 .section-4-box-2-title, .section-4-box-2 .section-4-box-3-title, .section-4-box-3 .section-4-box-1-title, .section-4-box-3 .section-4-box-2-title, .section-4-box-3 .section-4-box-3-title {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.section-4-box-1 .section-4-box-1-title h3, .section-4-box-1 .section-4-box-2-title h3, .section-4-box-1 .section-4-box-3-title h3, .section-4-box-2 .section-4-box-1-title h3, .section-4-box-2 .section-4-box-2-title h3, .section-4-box-2 .section-4-box-3-title h3, .section-4-box-3 .section-4-box-1-title h3, .section-4-box-3 .section-4-box-2-title h3, .section-4-box-3 .section-4-box-3-title h3 {
+  color: #13253b;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.section-4-box-1 .section-4-box-1-title strong, .section-4-box-1 .section-4-box-2-title strong, .section-4-box-1 .section-4-box-3-title strong, .section-4-box-2 .section-4-box-1-title strong, .section-4-box-2 .section-4-box-2-title strong, .section-4-box-2 .section-4-box-3-title strong, .section-4-box-3 .section-4-box-1-title strong, .section-4-box-3 .section-4-box-2-title strong, .section-4-box-3 .section-4-box-3-title strong {
+  font-family: Open Sans, sans-serif;
+  font-size: 2.875em;
+  font-weight: 300;
+}
+
+.section-4-box-1 .section-4-box-1-title ul, .section-4-box-1 .section-4-box-2-title ul, .section-4-box-1 .section-4-box-3-title ul, .section-4-box-2 .section-4-box-1-title ul, .section-4-box-2 .section-4-box-2-title ul, .section-4-box-2 .section-4-box-3-title ul, .section-4-box-3 .section-4-box-1-title ul, .section-4-box-3 .section-4-box-2-title ul, .section-4-box-3 .section-4-box-3-title ul {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.section-4-box-1 .section-4-box-1-title ul li, .section-4-box-1 .section-4-box-2-title ul li, .section-4-box-1 .section-4-box-3-title ul li, .section-4-box-2 .section-4-box-1-title ul li, .section-4-box-2 .section-4-box-2-title ul li, .section-4-box-2 .section-4-box-3-title ul li, .section-4-box-3 .section-4-box-1-title ul li, .section-4-box-3 .section-4-box-2-title ul li, .section-4-box-3 .section-4-box-3-title ul li {
+  list-style: none;
 }
 /*# sourceMappingURL=index.fcd3f647.css.map */
