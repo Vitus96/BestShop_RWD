@@ -49,6 +49,7 @@ $width-tablet-2: 34.375em; // 550px
 $width-tablet-3: 31.25em; // 500px
 $width-tablet-4: 37.5em, ; // 600px
 $width-tablet-5: 43.75em; // 700px
+$width-tablet-6: 56.25em; // 900 px
 $width-desktop: 64em; // 1024px
 $width-desktop-2: 111.25em; // 1780px
 
@@ -522,7 +523,7 @@ $base-column-width: math.div(100%, 12);
 }
 
 .section-3-bebefits-3-row-image {
-    max-width: 170px;
+    //max-width: 170px;
     width: 100%;
     position: relative;
     background-color: $color-green-1;
@@ -549,7 +550,11 @@ $base-column-width: math.div(100%, 12);
     font-family: $font-raleway;
     font-size: 2.25em; // 36 px
     font-weight: 500;
-    margin: 1.5em 0 0.5em 0;
+    margin: 1.5em 0 1em 0;
+
+    @media (min-width: $width-tablet-6) {
+        margin-bottom: 1.5em; 
+    }
 }
 
 .section-4-boxes {
@@ -571,16 +576,21 @@ $base-column-width: math.div(100%, 12);
     @content;
 }
 
+@mixin price($color-price) {
+    color: $color-price;
+}
+
 .section-4-box-1,
 .section-4-box-2,
 .section-4-box-3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2.5em 1em 2.5em 1em;
+    margin: 0em 1em 4em 1em;
     border-width: 2px;
     border-style: solid;
     border-radius: 1.125em; // 18px;
+    position: relative;
 
     .section-4-box-1-title,
     .section-4-box-2-title,
@@ -589,7 +599,7 @@ $base-column-width: math.div(100%, 12);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        margin: 3em 2.4em 5em 2.4em;
 
         h3 {
             font-family: $font-raleway;
@@ -605,28 +615,116 @@ $base-column-width: math.div(100%, 12);
             font-weight: 300;
         }
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+        p {
+            font-family: $font-raleway;
+            font-size: 0.75em; // 12px
+            color: $color-black-2;
+            font-weight: 800;
+        }
+    }
 
-            li {
-                list-style: none;
-            }
+    ul {
+        align-items: center;
+        list-style-type: none;
+        position: relative;
+        padding: 1.5625em 0em; // 25px 0px
+
+        li {
+            display: block;
+            font-family: $font-open-sans;
+            font-size: 0.875em; // 14px
+            margin: 1.25em 0; // 20px 0px
+            position: relative;
         }
     }
 }
 
+.section-4-box-1-title {
+    strong {
+        @include price($color-red-1);
+    }
+}
+
+.section-4-box-2-title {
+    strong {
+        @include price($color-blue-1);
+    }
+}
+
+.section-4-box-3-title {
+    strong {
+        @include price($color-green-1);
+    }
+}
+
+
+@mixin iconBox ($url, $top, $left) {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background-image: $url;
+    margin: 0 10px 0 10px;
+    top: $top;
+    left: $left;
+
+    @content;
+}
+
+@mixin button ($color-bg, $color) {
+    position: absolute;
+    padding: 1em 3.5625em;  // 16px 57px
+    background-color: $color-bg;
+    border-radius: 1.4375em;  // 23px
+    bottom: -1.7em;
+    color: $color;
+    font-family: $font-open-sans;
+    font-size: 0.8125em; //13px
+    font-weight: 600;
+
+    @content;
+}
+
 .section-4-box-1 {
     @include colorBoxes($color-red-1);
+    padding: 0em 0.7em;
+
+    .section-4-a-button-1 {
+        @include button ($color-red-1, $color-white-1);
+    }
+
 }
 
 .section-4-box-2 {
     @include colorBoxes($color-blue-1);
+    padding: 0em 0.7em;
     box-shadow: 5px 5px 27px $color-blue-1;
+    
+    .section-4-a-button-2 {
+        @include button ($color-blue-1, $color-white-1);
+        box-shadow: 5px 10px 27px $color-blue-1;
+    }
+
+    ul {
+        padding: 3.1875em 0em; // 51px
+/*
+        .li-1 {
+            @include iconBox(url(../assets/Checkmark-2.svg), 10px, -20px)
+        }
+
+        .li-2 {
+            @include iconBox(url(../assets/Checkmark-2.svg), 50px, -20px)
+        }*/
+    }
 }
 
 .section-4-box-3 {
     @include colorBoxes($color-green-1);
+    padding: 0em 0.7em;
+
+    .section-4-a-button-3 {
+        @include button ($color-green-1, $color-white-1);
+    }
 }
+
+//MAIN - Section 5 (FORM) -------------------

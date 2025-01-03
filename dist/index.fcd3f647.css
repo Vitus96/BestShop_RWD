@@ -854,7 +854,6 @@ a {
   background-color: #55dfb4;
   border-radius: .3125em;
   width: 100%;
-  max-width: 170px;
   position: relative;
 }
 
@@ -872,10 +871,16 @@ a {
 
 .section-4-title h2 {
   text-align: center;
-  margin: 1.5em 0 .5em;
+  margin: 1.5em 0 1em;
   font-family: Raleway, sans-serif;
   font-size: 2.25em;
   font-weight: 500;
+}
+
+@media (width >= 56.25em) {
+  .section-4-title h2 {
+    margin-bottom: 1.5em;
+  }
 }
 
 .section-4-boxes {
@@ -898,14 +903,16 @@ a {
   border-radius: 1.125em;
   justify-content: center;
   align-items: center;
-  margin: 2.5em 1em;
+  margin: 0 1em 4em;
   display: flex;
+  position: relative;
 }
 
 .section-4-box-1 .section-4-box-1-title, .section-4-box-1 .section-4-box-2-title, .section-4-box-1 .section-4-box-3-title, .section-4-box-2 .section-4-box-1-title, .section-4-box-2 .section-4-box-2-title, .section-4-box-2 .section-4-box-3-title, .section-4-box-3 .section-4-box-1-title, .section-4-box-3 .section-4-box-2-title, .section-4-box-3 .section-4-box-3-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 3em 2.4em 5em;
   display: flex;
 }
 
@@ -922,27 +929,94 @@ a {
   font-weight: 300;
 }
 
-.section-4-box-1 .section-4-box-1-title ul, .section-4-box-1 .section-4-box-2-title ul, .section-4-box-1 .section-4-box-3-title ul, .section-4-box-2 .section-4-box-1-title ul, .section-4-box-2 .section-4-box-2-title ul, .section-4-box-2 .section-4-box-3-title ul, .section-4-box-3 .section-4-box-1-title ul, .section-4-box-3 .section-4-box-2-title ul, .section-4-box-3 .section-4-box-3-title ul {
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  display: flex;
+.section-4-box-1 .section-4-box-1-title p, .section-4-box-1 .section-4-box-2-title p, .section-4-box-1 .section-4-box-3-title p, .section-4-box-2 .section-4-box-1-title p, .section-4-box-2 .section-4-box-2-title p, .section-4-box-2 .section-4-box-3-title p, .section-4-box-3 .section-4-box-1-title p, .section-4-box-3 .section-4-box-2-title p, .section-4-box-3 .section-4-box-3-title p {
+  color: #13253b;
+  font-family: Raleway, sans-serif;
+  font-size: .75em;
+  font-weight: 800;
 }
 
-.section-4-box-1 .section-4-box-1-title ul li, .section-4-box-1 .section-4-box-2-title ul li, .section-4-box-1 .section-4-box-3-title ul li, .section-4-box-2 .section-4-box-1-title ul li, .section-4-box-2 .section-4-box-2-title ul li, .section-4-box-2 .section-4-box-3-title ul li, .section-4-box-3 .section-4-box-1-title ul li, .section-4-box-3 .section-4-box-2-title ul li, .section-4-box-3 .section-4-box-3-title ul li {
-  list-style: none;
+.section-4-box-1 ul, .section-4-box-2 ul, .section-4-box-3 ul {
+  align-items: center;
+  padding: 1.5625em 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.section-4-box-1 ul li, .section-4-box-2 ul li, .section-4-box-3 ul li {
+  margin: 1.25em 0;
+  font-family: Open Sans, sans-serif;
+  font-size: .875em;
+  display: block;
+  position: relative;
+}
+
+.section-4-box-1-title strong {
+  color: #fb3b64;
+}
+
+.section-4-box-2-title strong {
+  color: #08a6e4;
+}
+
+.section-4-box-3-title strong {
+  color: #55dfb4;
 }
 
 .section-4-box-1 {
   border-color: #fb3b64;
+  padding: 0 .7em;
+}
+
+.section-4-box-1 .section-4-a-button-1 {
+  color: #fff;
+  background-color: #fb3b64;
+  border-radius: 1.4375em;
+  padding: 1em 3.5625em;
+  font-family: Open Sans, sans-serif;
+  font-size: .8125em;
+  font-weight: 600;
+  position: absolute;
+  bottom: -1.7em;
 }
 
 .section-4-box-2 {
   border-color: #08a6e4;
+  padding: 0 .7em;
   box-shadow: 5px 5px 27px #08a6e4;
+}
+
+.section-4-box-2 .section-4-a-button-2 {
+  color: #fff;
+  background-color: #08a6e4;
+  border-radius: 1.4375em;
+  padding: 1em 3.5625em;
+  font-family: Open Sans, sans-serif;
+  font-size: .8125em;
+  font-weight: 600;
+  position: absolute;
+  bottom: -1.7em;
+  box-shadow: 5px 10px 27px #08a6e4;
+}
+
+.section-4-box-2 ul {
+  padding: 3.1875em 0;
 }
 
 .section-4-box-3 {
   border-color: #55dfb4;
+  padding: 0 .7em;
+}
+
+.section-4-box-3 .section-4-a-button-3 {
+  color: #fff;
+  background-color: #55dfb4;
+  border-radius: 1.4375em;
+  padding: 1em 3.5625em;
+  font-family: Open Sans, sans-serif;
+  font-size: .8125em;
+  font-weight: 600;
+  position: absolute;
+  bottom: -1.7em;
 }
 /*# sourceMappingURL=index.fcd3f647.css.map */
