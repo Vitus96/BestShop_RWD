@@ -387,7 +387,7 @@ $base-column-width: math.div(100%, 12);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     //position: relative;
 
     @media (min-width: $width-desktop) {
@@ -458,10 +458,12 @@ $base-column-width: math.div(100%, 12);
 
 .section-3-bebefits-1-row-image,
 .section-3-bebefits-2-row-image {
-    max-width: 170px;
+    //max-width: 170px;
     width: 100%;
+    height: 100%;
     position: relative;
     padding-top: 2em;
+    
 
     @media (min-width: 500px) {
         max-width: 220px;
@@ -483,8 +485,8 @@ $base-column-width: math.div(100%, 12);
 }
 
 .section-3-bebefits-1-row-image {
-    &::after {
-        @include imageFrame (90px, 90px, 15px, 88px, 20px, $color-red-1, 45deg);
+    div::after {
+        @include imageFrame (90px, 90px, 15px, 88px, 20px, $color-red-1, 45deg); // nastavit right místo left !!!
 
         @media (min-width: $width-tablet-3) {
             // 500px
@@ -502,12 +504,12 @@ $base-column-width: math.div(100%, 12);
 }
 
 .section-3-bebefits-2-row-image {
-    &::after {
-        @include imageFrame (130px, 130px, 20px, 5px, 50%, $color-blue-1, 45deg);
+    div::after {
+        @include imageFrame (130px, 130px, 20px, 5px, 50%, $color-blue-1, 45deg); // nastavit right místo left !!!
 
         @media (min-width: $width-tablet-3) {
             // 500px
-            @include imageFrame (150px, 150px, 20px, 20px, 50%, $color-blue-1, 45deg);
+            @include imageFrame (150px, 150px, 20px, 20px, 50%, $color-blue-1, 45deg); 
         }
 
         @media (min-width: $width-tablet-4) {

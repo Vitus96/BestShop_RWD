@@ -653,7 +653,6 @@ a {
 .section-3-bebefits-1-row, .section-3-bebefits-2-row, .section-3-bebefits-3-row {
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   display: flex;
 }
 
@@ -697,7 +696,7 @@ a {
 
 .section-3-bebefits-1-row-image, .section-3-bebefits-2-row-image {
   width: 100%;
-  max-width: 170px;
+  height: 100%;
   padding-top: 2em;
   position: relative;
 }
@@ -726,7 +725,7 @@ a {
   position: relative;
 }
 
-.section-3-bebefits-1-row-image:after {
+.section-3-bebefits-1-row-image div:after {
   content: "";
   background-color: #fb3b64;
   border: none;
@@ -741,7 +740,7 @@ a {
 }
 
 @media (width >= 31.25em) {
-  .section-3-bebefits-1-row-image:after {
+  .section-3-bebefits-1-row-image div:after {
     content: "";
     width: 110px;
     height: 110x;
@@ -757,7 +756,7 @@ a {
 }
 
 @media (width >= 37.5em) {
-  .section-3-bebefits-1-row-image:after {
+  .section-3-bebefits-1-row-image div:after {
     content: "";
     background-color: #fb3b64;
     border: none;
@@ -773,7 +772,7 @@ a {
 }
 
 @media (width >= 43.75em) {
-  .section-3-bebefits-1-row-image:after {
+  .section-3-bebefits-1-row-image div:after {
     content: "";
     background-color: #fb3b64;
     border: none;
@@ -788,7 +787,7 @@ a {
   }
 }
 
-.section-3-bebefits-2-row-image:after {
+.section-3-bebefits-2-row-image div:after {
   content: "";
   background-color: #08a6e4;
   border: none;
@@ -803,7 +802,7 @@ a {
 }
 
 @media (width >= 31.25em) {
-  .section-3-bebefits-2-row-image:after {
+  .section-3-bebefits-2-row-image div:after {
     content: "";
     background-color: #08a6e4;
     border: none;
@@ -819,7 +818,7 @@ a {
 }
 
 @media (width >= 37.5em) {
-  .section-3-bebefits-2-row-image:after {
+  .section-3-bebefits-2-row-image div:after {
     content: "";
     background-color: #08a6e4;
     border: none;
@@ -835,7 +834,7 @@ a {
 }
 
 @media (width >= 43.75em) {
-  .section-3-bebefits-2-row-image:after {
+  .section-3-bebefits-2-row-image div:after {
     content: "";
     background-color: #08a6e4;
     border: none;
